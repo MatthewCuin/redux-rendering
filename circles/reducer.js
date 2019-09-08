@@ -23,5 +23,16 @@ const reducer = (state = initialState, action) => {
 
     // ACTION: Add a random circle
 
+    if (type === 'RANDOM_CIRCLE') {
+        const radius = Math.random() * 100;
+        const color = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+        return [
+            ...state,
+            {
+                radius: radius,
+                color: color,
+            },
+        ]
+    }
     return state;
 }
